@@ -2,36 +2,48 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>WASM Demo</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1"><script defer src="bundle.js"></script>
-        <style>
-            * {
-                box-sizing: border-box;
-                margin: 0;
-                padding: 0;
-            }
-
-            body {
-                background-color: rgb(29, 30, 32);
-                color: rgb(218, 218, 219);
-                font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Ubuntu,Cantarell,open sans,helvetica neue,sans-serif;
-                width: 100%;
-                height: auto;
-                min-height: 100vh;
-            }
-
-            body .canvas {
-                width: 100%;
-                max-width: 1024px;
-                margin: auto;
-                display: flex;
-                flex-direction: column;
-            }
-        </style>
+        <title>WASM Diff</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script defer src="bundle.js"></script>
     </head>
     <body>
         <div class="canvas">
-            <h1 style="line-height: 2;">WASM Diff</h1>
+            <h1 class="text-4xl leading-loose">WASM Diff</h1>
+            <div class="flex flex-row gap-2"></div>
+            <div class="grid grid-cols-2 gap-2">
+                <div class="relative flex flex-col gap-2">
+                    <label for="old" class="block mb-2 text-sm font-medium">Old Text</label>
+                    <textarea rows="24" id="old-textarea" class="textarea"></textarea>
+                </div>
+                <div class="relative flex flex-col gap-2">
+                    <label for="new" class="block mb-2 text-sm font-medium">New Text</label>
+                    <textarea rows="24" id="new-textarea" class="textarea"></textarea>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-2 py-4">
+                <div class="flex flex-col">
+                    <div class="flex flex-row">
+                        <h2 class="text-2xl">JavaScript Diff</h2>
+                        <div class="ml-auto">
+                            <button type="button" class="button purple" id="button-js-diff">
+                                Run JS Diff
+                            </button>
+                        </div>
+                    </div>
+                    <div class="diff" id="show-js-diff"></div>
+                </div>
+                <div class="flex flex-col">
+                    <div class="flex flex-row">
+                        <h2 class="text-2xl">WASM Diff</h2>
+                        <div class="ml-auto">
+                            <button type="button" class="button blue" id="button-wasm-diff">
+                                Run WASM Diff
+                            </button>
+                        </div>
+                    </div>
+                    <div class="diff" id="show-wasm-diff"></div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
