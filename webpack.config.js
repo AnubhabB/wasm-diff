@@ -7,7 +7,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
         template: "./src/index.html"
-    }),
+    })
   ],
   output: {
     filename: 'bundle.js',
@@ -22,4 +22,7 @@ module.exports = {
       },
     ],
   },
+  experiments: {
+    asyncWebAssembly: true
+  }
 };

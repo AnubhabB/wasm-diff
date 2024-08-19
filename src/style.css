@@ -29,3 +29,27 @@ textarea.textarea {
 .diff {
     @apply py-2;
 }
+
+.diff del {
+    @apply text-red-600;
+}
+
+.diff ins {
+    @apply text-green-600;
+}
+
+.stats {
+    @apply flex flex-row items-center gap-4;
+}
+
+.stats .stat-sect {
+    @apply flex flex-col;
+}
+
+.stats .stat-sect label {
+    @apply text-xs font-medium text-gray-400;
+}
+
+.stats .stat-sect .stat-data {
+    @apply text-xl;
+}
