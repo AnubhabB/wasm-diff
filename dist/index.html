@@ -1,9 +1,61 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>WASM Demo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1"><script defer src="bundle.js"></script><script defer src="bundle.js"></script></head>
-  <body>
-  </body>
+    <head>
+        <meta charset="utf-8">
+        <title>WASM Diff</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script defer src="bundle.js"></script>
+    <script defer src="bundle.js"></script></head>
+    <body>
+        <div class="canvas">
+            <h1 class="text-4xl leading-loose">WASM Diff</h1>
+            <div class="flex flex-row gap-2"></div>
+            <div class="grid grid-cols-2 gap-2">
+                <div class="relative flex flex-col gap-2">
+                    <label for="old" class="block mb-2 text-sm font-medium">Old Text</label>
+                    <textarea rows="24" id="old-textarea" class="textarea"></textarea>
+                </div>
+                <div class="relative flex flex-col gap-2">
+                    <label for="new" class="block mb-2 text-sm font-medium">New Text</label>
+                    <textarea rows="24" id="new-textarea" class="textarea"></textarea>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-2 py-4">
+                <div class="flex flex-col">
+                    <div class="flex flex-row">
+                        <h2 class="text-2xl">JavaScript Diff</h2>
+                        <div class="ml-auto">
+                            <button type="button" class="button purple" id="button-js-diff">
+                                Run JS Diff
+                            </button>
+                        </div>
+                    </div>
+                    <div class="stats">
+                        <div class="stat-sect">
+                            <label for="js-total-time">Time</label>
+                            <div class="stat-data" id="js-total-time">-</div>
+                        </div>
+                    </div>
+                    <div class="diff" id="show-js-diff"></div>
+                </div>
+                <div class="flex flex-col">
+                    <div class="flex flex-row">
+                        <h2 class="text-2xl">WASM Diff</h2>
+                        <div class="ml-auto">
+                            <button type="button" class="button blue" id="button-wasm-diff">
+                                Run WASM Diff
+                            </button>
+                        </div>
+                    </div>
+                    <div class="stats">
+                        <div class="stat-sect">
+                            <label for="ws-total-time">Time</label>
+                            <div class="stat-data" id="ws-total-time">-</div>
+                        </div>
+                    </div>
+                    <div class="diff" id="show-ws-diff"></div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
