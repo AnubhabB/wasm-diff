@@ -11,4 +11,4 @@ Text `diff` demo in browser with Rust WASM
 
 
 ## Note:
-This demo project uses [diff-match-patch-rs](https://github.com/AnubhabB/diff-match-patch-rs) rust crate which is not production ready and still very much in active development. **Do NOT** use it in production till it's out of `beta`.
+This demo project uses [diff-match-patch-rs](https://crates.io/crates/diff-match-patch-rs) rust crate which is not production ready and still very much in active development. **Do NOT** use it in production till it's out of `beta`.

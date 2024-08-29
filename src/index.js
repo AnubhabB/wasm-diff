@@ -71,8 +71,6 @@ const wasmDiff = () => {
 
     let total = Date.now();
 
-    html = diffPrettier(html);
-
     let target = document.getElementById("show-ws-diff");
     let total_time = document.getElementById("ws-total-time");
     if(!target || !total_time) {

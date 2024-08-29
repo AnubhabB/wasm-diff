@@ -1,4 +1,4 @@
-use diff_match_patch_rs::dmp::DiffMatchPatch;
+use diff_match_patch_rs::{dmp::DiffMatchPatch, Efficient, HtmlConfig};
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
@@ -20,14 +20,16 @@ impl Differ {
     }
 
     pub fn diff(&self, old: &str, new: &str) -> Result<String, String> {
-        let diffs = match self.dmp.diff_main(old, new) {
+        let diffs = match self.dmp.diff_main::<Efficient>(old, new) {
             Ok(d) => d,
             Err(_) => {
                 return Err("error while diffing".to_string())
             }
         };
 
-        let html = match DiffMatchPatch::diff_pretty_html(&diffs[..]) {
+        let cfg = HtmlConfig::new();
+
+        let html = match self.dmp.diff_pretty_html(&diffs[..], &cfg) {
             Ok(s) => s,
             Err(_) => {
                 return Err("Error preparing HTML".to_string())
